@@ -14,7 +14,7 @@ export default function Layout({ children }) {
         <a href="/photos">Photos</a>
       </div>
 
-      <main>{children}</main>
+      <main className={styles.main}>{children}</main>
     </div>
   )
 }
