@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
@@ -7,6 +7,12 @@ export default function Home() {
       <Head>
         <title>Tech Offsite 2022</title>
       </Head>
+
+      <div className={styles.nav}>
+        <a href="/">Home</a>
+        <a href="/about-me">About Me</a>
+        <a href="/photos">Photos</a>
+      </div>
 
       <main>
         <h1>
