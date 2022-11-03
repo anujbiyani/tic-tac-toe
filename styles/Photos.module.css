@@ -1,0 +1,21 @@
+.gallery {
+  display: flex;
+}
+
+.gallery button {
+  border: none;
+  background-color: unset;
+  flex: 0 0 50px;
+}
+
+.gallery .iconContainer:hover {
+  background-color: red;
+}
+
+.gallery .imageContainer {
+  flex: 1 1 auto;
+}
+
+.gallery img {
+  max-width: 100%;
+}
