@@ -1,5 +1,6 @@
 import Layout from '../components/Layout';
 import styles from '../styles/AboutMe.module.css';
+import { whatAmI, whoAmI } from '../lib/images';
 
 export default function AboutMe() {
   return (
@@ -14,7 +15,7 @@ export default function AboutMe() {
           Well, they're bigger than me. Where the hell are they. Weight has nothing to do with it. Excuse me. Oh.
         </p>
 
-        <img src="https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2021-12/christopher-lloyd-kb-main-211214-572486.jpg" />
+        <img src={whoAmI} />
 
         <h2>What Am I?</h2>
         <p>
@@ -25,7 +26,7 @@ export default function AboutMe() {
           Take care. Hey Marty, I'm not your answering service, but you're outside pouting about the car, Jennifer Parker called you twice. I know, and all I could say is I'm sorry. Oh, uh, hey you, get your damn hands off her. Do you really think I oughta swear? About how far ahead are you going?
         </p>
 
-        <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2015%2F10%2Fback-to-the-future_0.jpg&q=60" />
+        <img src={whatAmI} />
       </div>
     </Layout>
   )
