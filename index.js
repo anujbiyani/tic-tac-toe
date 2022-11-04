@@ -26,8 +26,6 @@ function initBoxes(sideLength) {
   return boxes;
 }
 
-let boxes = initBoxes(3);
-
 function drawBoxes(boxes) {
   let gridElement = document.getElementById('grid');
 
@@ -48,8 +46,6 @@ function drawBoxes(boxes) {
     }
   }
 }
-
-drawBoxes(boxes);
 
 function nextPlayer(currentPlayer) {
   if (currentPlayer === Options.PlayerX) {
@@ -179,3 +175,6 @@ function reset() {
   gameOver = false;
   draw('');
 }
+
+let boxes = initBoxes(3);
+drawBoxes(boxes);
