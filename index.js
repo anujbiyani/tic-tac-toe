@@ -25,27 +25,53 @@ function nextPlayer(currentPlayer) {
   }
 }
 
+function getBoxElement(rowIndex, columnIndex) {
+  return document.getElementById(`${rowIndex}${columnIndex}`);
+}
+
 function drawBoxes(boxes) {
   for (let rowIndex = 0; rowIndex < 3; rowIndex++) {
     for (let columnIndex = 0; columnIndex < 3; columnIndex++) {
-      const targetBox = document.getElementById(`${rowIndex}${columnIndex}`);
+      const targetBox = getBoxElement(rowIndex, columnIndex);
 
       if (boxes[rowIndex][columnIndex] === Options.PlayerX) {
-        targetBox.value = Options.PlayerX;
+        targetBox.innerText = Options.PlayerX;
       } else if (boxes[rowIndex][columnIndex] === Options.PlayerO) {
-        targetBox.value = Options.PlayerO;
+        targetBox.innerText = Options.PlayerO;
       } else {
-        targetBox.value = "";
+        targetBox.innerText = "";
       }
     }
   }
 }
 
-function selectBox(xCoordinate, yCoordinate) {
-  boxes[xCoordinate][yCoordinate] = currentPlayer;
+function drawError(xCoordinate, yCoordinate) {
+  getBoxElement(xCoordinate, yCoordinate).classList.add('error');
+}
 
-  drawBoxes(boxes);
-  currentPlayer = nextPlayer(currentPlayer);
+function clearError(xCoordinate, yCoordinate) {
+  getBoxElement(xCoordinate, yCoordinate).classList.remove('error');
+}
+
+function selectBox(xCoordinate, yCoordinate) {
+  clearError(xCoordinate, yCoordinate);
+
+  if (boxes[xCoordinate][yCoordinate] === Options.Unselected) {
+    boxes[xCoordinate][yCoordinate] = currentPlayer;
+
+    drawBoxes(boxes);
+    currentPlayer = nextPlayer(currentPlayer);
+  } else {
+    drawError(xCoordinate, yCoordinate);
+  }
+}
+
+function clearAllErrors() {
+  for (let rowIndex = 0; rowIndex < 3; rowIndex++) {
+    for (let columnIndex = 0; columnIndex < 3; columnIndex++) {
+      clearError(rowIndex, columnIndex);
+    }
+  }
 }
 
 function reset() {
@@ -56,4 +82,6 @@ function reset() {
   ];
 
   drawBoxes(boxes);
+  clearAllErrors();
+  currentPlayer = players[0];
 }

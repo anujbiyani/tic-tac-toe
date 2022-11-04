@@ -10,14 +10,29 @@ h1 {
   font-size: 1rem;
 }
 
+.grid {
+  max-width: 800px;
+  margin: auto;
+}
+
+.row-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 .box {
   width: 80px;
   height: 52px;
-  margin: auto;
+  margin-left: 5px;
+  margin-right: 5px;
   border: 1px solid gray;
   border-radius: 6px;
   font-size: 30px;
   text-align: center;
+  user-select: none;
+  background-color: unset;
 }
 
 input, button {
@@ -37,4 +52,8 @@ input, button {
 
 .print {
   font-size: 1rem;
+}
+
+.error {
+  border: 1px solid red;
 }
