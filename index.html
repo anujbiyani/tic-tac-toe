@@ -3,7 +3,6 @@
 <head>
   <title>Anuj Biyani</title>
   <link rel="stylesheet" type="text/css" href="index.css">
-  <script src="index.js" type="application/javascript"></script>
 </head>
 
 <body>
@@ -16,25 +15,7 @@
 
     <br><br>
 
-    <div class="grid">
-      <div class="row-container">
-        <button class="box" id="00" onclick="selectBox(0, 0)"></button>
-        <button class="box" id="01" onclick="selectBox(0, 1)"></button>
-        <button class="box" id="02" onclick="selectBox(0, 2)"></button>
-      </div>
-
-      <div class="row-container">
-        <button class="box" id="10" onclick="selectBox(1, 0)"></button>
-        <button class="box" id="11" onclick="selectBox(1, 1)"></button>
-        <button class="box" id="12" onclick="selectBox(1, 2)"></button>
-      </div>
-
-      <div class="row-container">
-        <button class="box" id="20" onclick="selectBox(2, 0)"></button>
-        <button class="box" id="21" onclick="selectBox(2, 1)"></button>
-        <button class="box" id="22" onclick="selectBox(2, 2)"></button>
-      </div>
-    </div>
+    <div id="grid"></div>
 
     <br><br><br>
 
@@ -46,5 +27,7 @@
 
     <p id="print"></p>
   </div>
+
+  <script src="index.js" type="application/javascript"></script>
 </body>
 </html>

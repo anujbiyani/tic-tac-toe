@@ -10,7 +10,7 @@ h1 {
   font-size: 1rem;
 }
 
-.grid {
+#grid {
   max-width: 800px;
   margin: auto;
 }
