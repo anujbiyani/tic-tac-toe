@@ -119,7 +119,6 @@ function checkForWinningDiagonal(boxes, player) {
   for (let index = 0; index < boxes.length; index++) {
     firstDiagonal.push(boxes[index][index]);
   }
-
   if (firstDiagonal.every(box => box === player)) {
     return true;
   }
