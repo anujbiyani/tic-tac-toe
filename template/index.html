@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <script src="index.js" type="application/javascript"></script>
+</head>
+
+<body>
+  <div class="main">
+    <h1>Tic Tac Toe</h1>
+
+    <p class="instructions">
+      Game starts by just clicking on a box
+    </p>
+
+    <br><br>
+
+    <input type="text" class="box" id="00" onclick="selectBox(0, 0)" readonly>
+    <input type="text" class="box" id="10" onclick="selectBox(1, 0)" readonly>
+    <input type="text" class="box" id="20" onclick="selectBox(2, 0)" readonly>
+
+    <br><br>
+
+    <input type="text" class="box" id="01" onclick="selectBox(0, 1)" readonly>
+    <input type="text" class="box" id="11" onclick="selectBox(1, 1)" readonly>
+    <input type="text" class="box" id="21" onclick="selectBox(2, 1)" readonly>
+
+    <br><br>
+
+    <input type="text" class="box" id="02" onclick="selectBox(0, 2)" readonly>
+    <input type="text" class="box" id="12" onclick="selectBox(1, 2)" readonly>
+    <input type="text" class="box" id="22" onclick="selectBox(2, 2)" readonly>
+
+    <br><br><br>
+
+    <button class="reset" onclick="reset()">
+      Reset
+    </button>
+
+    <br><br>
+
+    <p class="print"></p>
+  </div>
+</body>
+</html>
