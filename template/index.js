@@ -1,21 +1,10 @@
-let Options = {
-  Unselected: 'Unselected',
-  PlayerX: 'X',
-  PlayerO: 'O',
-}
-
-let players = [
-  Options.PlayerX,
-  Options.PlayerO,
-];
-
 let boxes = [
-  [Options.Unselected, Options.Unselected, Options.Unselected],
-  [Options.Unselected, Options.Unselected, Options.Unselected],
-  [Options.Unselected, Options.Unselected, Options.Unselected],
+  [undefined, undefined, undefined],
+  [undefined, undefined, undefined],
+  [undefined, undefined, undefined],
 ];
 
-let currentPlayer = players[0];
+let currentPlayer = 'X';
 
 function selectBox(xCoordinate, yCoordinate) {
   /*
