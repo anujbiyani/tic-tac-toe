@@ -6,7 +6,7 @@ let boxes = [
 
 let currentPlayer = 'X';
 
-function selectBox(xCoordinate, yCoordinate) {
+function selectBox(row, column) {
   /*
   Step 1: mark the correct box as selected by the currentPlayer
   Step 2: update the HTML with the selection
