@@ -21,3 +21,9 @@ let element = document.getElementById('element-id');
 // Iterate through an array
 for (let index = 0; index < array.length; index++) {
 }
+
+// Log to web console, useful for debugging
+console.log('anything goes here');
+
+// Concatenate two strings together
+"string one" + " string two" //=> "string one string two"
