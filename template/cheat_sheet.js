@@ -1,6 +1,6 @@
 // Access element in array
 let array = [1, 2, 3, 4, 5];
-array[1] //=> 1
+array[1] //=> 2
 
 // Assign element in array
 let array = [1, 2, 3, 4, 5];
