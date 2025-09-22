@@ -195,6 +195,7 @@ function reset() {
   currentPlayer = players[0];
   gameOver = false;
   drawText('', PrintElements.WinnerMessage);
+  drawText('', PrintElements.DrawMessage);
 }
 
 let boxes = initializeBoxes(3);
