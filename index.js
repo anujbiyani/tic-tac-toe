@@ -12,7 +12,7 @@ let players = [
 let currentPlayer = players[0];
 let gameOver = false;
 
-function initBoxes(sideLength) {
+function initializeBoxes(sideLength) {
   let boxes = [];
 
   for (let rowIndex = 0; rowIndex < sideLength; rowIndex++) {
@@ -26,7 +26,7 @@ function initBoxes(sideLength) {
   return boxes;
 }
 
-function drawBoxes(boxes) {
+function renderBoxes(boxes) {
   let gridElement = document.getElementById('grid');
 
   for (let rowIndex = 0; rowIndex < boxes.length; rowIndex++) {
@@ -75,7 +75,7 @@ function markBoxes(boxes) {
   }
 }
 
-function drawError(xCoordinate, yCoordinate) {
+function renderError(xCoordinate, yCoordinate) {
   getBoxElement(xCoordinate, yCoordinate).classList.add('error');
 }
 
@@ -83,12 +83,12 @@ function clearError(xCoordinate, yCoordinate) {
   getBoxElement(xCoordinate, yCoordinate).classList.remove('error');
 }
 
-function draw(text) {
+function renderText(text) {
   document.getElementById('print').innerText = text;
 }
 
 function setWinner(player) {
-  draw(`Player ${player} has won!`);
+  renderText(`Player ${player} has won!`);
   gameOver = true;
 }
 
@@ -154,7 +154,7 @@ function selectBox(xCoordinate, yCoordinate) {
     checkForWinner(boxes, currentPlayer);
     currentPlayer = nextPlayer(currentPlayer);
   } else {
-    drawError(xCoordinate, yCoordinate);
+    renderError(xCoordinate, yCoordinate);
   }
 }
 
@@ -167,13 +167,13 @@ function clearAllErrors(boxes) {
 }
 
 function reset() {
-  boxes = initBoxes(boxes.length);
+  boxes = initializeBoxes(boxes.length);
   markBoxes(boxes);
   clearAllErrors(boxes);
   currentPlayer = players[0];
   gameOver = false;
-  draw('');
+  renderText('');
 }
 
-let boxes = initBoxes(3);
-drawBoxes(boxes);
+let boxes = initializeBoxes(3);
+renderBoxes(boxes);
