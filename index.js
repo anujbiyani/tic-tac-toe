@@ -11,6 +11,7 @@ let players = [
 
 let PrintElements = {
   WinnerMessage: 'winner-message',
+  DrawMessage: 'draw-message',
 };
 
 let currentPlayer = players[0];
@@ -96,6 +97,11 @@ function setWinner(player) {
   gameOver = true;
 }
 
+function setDraw() {
+  renderText('Draw!', PrintElements.DrawMessage);
+  gameOver = true;
+}
+
 function checkForWinningRow(boxes, player) {
   for (let rowIndex = 0; rowIndex < boxes.length; rowIndex++) {
     if (boxes[rowIndex].every(box => box === player)) {
@@ -146,6 +152,10 @@ function checkForWinner(boxes, player) {
   )
 }
 
+function checkForDraw(boxes) {
+  return boxes.every(row => row.every(box => box !== Options.Unselected));
+}
+
 function selectBox(xCoordinate, yCoordinate) {
   if (gameOver) {
     return;
@@ -160,6 +170,8 @@ function selectBox(xCoordinate, yCoordinate) {
 
     if (checkForWinner(boxes, currentPlayer)) {
       setWinner(currentPlayer);
+    } else if (checkForDraw(boxes)) {
+      setDraw();
     } else {
       currentPlayer = nextPlayer(currentPlayer);
     }
@@ -183,6 +195,7 @@ function reset() {
   currentPlayer = players[0];
   gameOver = false;
   renderText('', PrintElements.WinnerMessage);
+  renderText('', PrintElements.DrawMessage);
 }
 
 let boxes = initializeBoxes(3);

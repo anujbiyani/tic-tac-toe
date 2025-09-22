@@ -52,6 +52,12 @@ input, button {
 
 #winner-message {
   font-size: 1rem;
+  color: green;
+}
+
+#draw-message {
+  font-size: 1rem;
+  color: red;
 }
 
 .error {
