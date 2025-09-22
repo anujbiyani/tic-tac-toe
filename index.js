@@ -9,6 +9,10 @@ let players = [
   Options.PlayerO,
 ];
 
+let PrintElements = {
+  WinnerMessage: 'winner-message',
+};
+
 let currentPlayer = players[0];
 let gameOver = false;
 
@@ -83,12 +87,12 @@ function clearError(xCoordinate, yCoordinate) {
   getBoxElement(xCoordinate, yCoordinate).classList.remove('error');
 }
 
-function renderText(text) {
-  document.getElementById('print').innerText = text;
+function renderText(text, elementId) {
+  document.getElementById(elementId).innerText = text;
 }
 
 function setWinner(player) {
-  renderText(`Player ${player} has won!`);
+  renderText(`Player ${player} has won!`, PrintElements.WinnerMessage);
   gameOver = true;
 }
 
@@ -172,7 +176,7 @@ function reset() {
   clearAllErrors(boxes);
   currentPlayer = players[0];
   gameOver = false;
-  renderText('');
+  renderText('', PrintElements.WinnerMessage);
 }
 
 let boxes = initializeBoxes(3);
