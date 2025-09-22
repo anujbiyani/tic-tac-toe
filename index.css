@@ -50,8 +50,14 @@ input, button {
   font-size: 20px;
 }
 
-.print {
+#winner-message {
   font-size: 1rem;
+  color: green;
+}
+
+#draw-message {
+  font-size: 1rem;
+  color: red;
 }
 
 .error {
