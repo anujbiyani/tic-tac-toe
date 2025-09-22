@@ -139,9 +139,11 @@ function checkForWinningDiagonal(boxes, player) {
 }
 
 function checkForWinner(boxes, player) {
-  if (checkForWinningRow(boxes, player) || checkForWinningColumn(boxes, player) || checkForWinningDiagonal(boxes, player)) {
-    setWinner(player);
-  }
+  return (
+    checkForWinningRow(boxes, player) ||
+    checkForWinningColumn(boxes, player) ||
+    checkForWinningDiagonal(boxes, player)
+  )
 }
 
 function selectBox(xCoordinate, yCoordinate) {
@@ -155,8 +157,12 @@ function selectBox(xCoordinate, yCoordinate) {
     boxes[xCoordinate][yCoordinate] = currentPlayer;
 
     markBoxes(boxes);
-    checkForWinner(boxes, currentPlayer);
-    currentPlayer = nextPlayer(currentPlayer);
+
+    if (checkForWinner(boxes, currentPlayer)) {
+      setWinner(currentPlayer);
+    } else {
+      currentPlayer = nextPlayer(currentPlayer);
+    }
   } else {
     renderError(xCoordinate, yCoordinate);
   }
