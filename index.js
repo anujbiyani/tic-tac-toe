@@ -31,7 +31,7 @@ function initializeBoxes(sideLength) {
   return boxes;
 }
 
-function drawBoxes(boxes) {
+function renderBoxes(boxes) {
   let gridElement = document.getElementById('grid');
 
   for (let rowIndex = 0; rowIndex < boxes.length; rowIndex++) {
@@ -80,7 +80,7 @@ function markBoxes(boxes) {
   }
 }
 
-function drawError(xCoordinate, yCoordinate) {
+function renderError(xCoordinate, yCoordinate) {
   getBoxElement(xCoordinate, yCoordinate).classList.add('error');
 }
 
@@ -88,17 +88,17 @@ function clearError(xCoordinate, yCoordinate) {
   getBoxElement(xCoordinate, yCoordinate).classList.remove('error');
 }
 
-function drawText(text, elementId) {
+function renderText(text, elementId) {
   document.getElementById(elementId).innerText = text;
 }
 
 function setWinner(player) {
-  drawText(`Player ${player} has won!`, PrintElements.WinnerMessage);
+  renderText(`Player ${player} has won!`, PrintElements.WinnerMessage);
   gameOver = true;
 }
 
 function setDraw() {
-  drawText('Draw!', PrintElements.DrawMessage);
+  renderText('Draw!', PrintElements.DrawMessage);
   gameOver = true;
 }
 
@@ -176,7 +176,7 @@ function selectBox(xCoordinate, yCoordinate) {
 
     currentPlayer = nextPlayer(currentPlayer);
   } else {
-    drawError(xCoordinate, yCoordinate);
+    renderError(xCoordinate, yCoordinate);
   }
 }
 
@@ -194,9 +194,9 @@ function reset() {
   clearAllErrors(boxes);
   currentPlayer = players[0];
   gameOver = false;
-  drawText('', PrintElements.WinnerMessage);
-  drawText('', PrintElements.DrawMessage);
+  renderText('', PrintElements.WinnerMessage);
+  renderText('', PrintElements.DrawMessage);
 }
 
 let boxes = initializeBoxes(3);
-drawBoxes(boxes);
+renderBoxes(boxes);
